@@ -7,7 +7,7 @@
 * run
 
 
-＃ android
+# android
 
 * cocos compile
 # cocos run
