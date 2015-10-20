@@ -1,6 +1,73 @@
 #include "HelloWorldScene.h"
+#include "PluginAppodeal/PluginAppodeal.h"
 
 USING_NS_CC;
+
+class ADListener : public sdkbox::AppodealListener {
+public:
+    virtual void onBannerDidLoadAd();
+    virtual void onBannerDidFailToLoadAd();
+    virtual void onBannerDidClick();
+    virtual void onBannerPresent();
+
+    virtual void onInterstitialDidLoadAd();
+    virtual void onInterstitialDidFailToLoadAd();
+    virtual void onInterstitialWillPresent();
+    virtual void onInterstitialDidDismiss();
+    virtual void onInterstitialDidClick();
+
+    virtual void onVideoDidLoadAd();
+    virtual void onVideoDidFailToLoadAd();
+    virtual void onVideoDidPresent();
+    virtual void onVideoWillDismiss();
+    virtual void onVideoDidFinish();
+};
+
+void ADListener::onBannerDidLoadAd() {
+    CCLOG("Listener onBannerDidLoadAd");
+}
+void ADListener::onBannerDidFailToLoadAd() {
+    CCLOG("Listener onBannerDidFailToLoadAd");
+}
+void ADListener::onBannerDidClick() {
+    CCLOG("Listener onBannerDidClick");
+}
+void ADListener::onBannerPresent() {
+    CCLOG("Listener onBannerPresent");
+}
+
+void ADListener::onInterstitialDidLoadAd() {
+    CCLOG("Listener onInterstitialDidLoadAd");
+}
+void ADListener::onInterstitialDidFailToLoadAd() {
+    CCLOG("Listener onInterstitialDidFailToLoadAd");
+}
+void ADListener::onInterstitialWillPresent() {
+    CCLOG("Listener onInterstitialWillPresent");
+}
+void ADListener::onInterstitialDidDismiss() {
+    CCLOG("Listener onInterstitialDidDismiss");
+}
+void ADListener::onInterstitialDidClick() {
+    CCLOG("Listener onInterstitialDidClick");
+}
+
+void ADListener::onVideoDidLoadAd() {
+    CCLOG("Listener onVideoDidLoadAd");
+}
+void ADListener::onVideoDidFailToLoadAd() {
+    CCLOG("Listener onVideoDidFailToLoadAd");
+}
+void ADListener::onVideoDidPresent() {
+    CCLOG("Listener onVideoDidPresent");
+}
+void ADListener::onVideoWillDismiss() {
+    CCLOG("Listener onVideoWillDismiss");
+}
+void ADListener::onVideoDidFinish() {
+    CCLOG("Listener onVideoDidFinish");
+}
+
 
 Scene* HelloWorld::createScene()
 {
@@ -54,7 +121,7 @@ bool HelloWorld::init()
     // add a label shows "Hello World"
     // create and initialize a label
     
-    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
+    auto label = Label::createWithTTF("Appodeal Sample", "fonts/Marker Felt.ttf", 24);
     
     // position the label on the center of the screen
     label->setPosition(Vec2(origin.x + visibleSize.width/2,
@@ -63,15 +130,33 @@ bool HelloWorld::init()
     // add the label as a child to this layer
     this->addChild(label, 1);
 
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
     
+    Menu* list = Menu::create(
+                              MenuItemFont::create("Show Ad", CC_CALLBACK_1(HelloWorld::onButton1Click, this)),
+                              NULL);
+    list->alignItemsVerticallyWithPadding(5);
+    list->setPosition(origin.x + visibleSize.width/2, origin.y + visibleSize.height/2);
+    addChild(list);
+    
+	sdkbox::PluginAppodeal::setListener(new ADListener());
+    sdkbox::PluginAppodeal::init();
+
+    sdkbox::PluginAppodeal::setDebugEnabled(true);
+    sdkbox::PluginAppodeal::setUserVkId("user id");
+    sdkbox::PluginAppodeal::setUserFacebookId("facebook id");
+    sdkbox::PluginAppodeal::setUserEmail("test@sdkbox.com");
+    sdkbox::PluginAppodeal::setUserBirthday("11/11/1999"); //DD/MM/YYYY
+    sdkbox::PluginAppodeal::setUserAge(11);
+    sdkbox::PluginAppodeal::setUserGender(sdkbox::PluginAppodeal::Gender::AppodealUserGenderMale);
+    sdkbox::PluginAppodeal::setUserOccupation(sdkbox::PluginAppodeal::Occupation::AppodealUserOccupationSchool);
+    sdkbox::PluginAppodeal::setUserRelationship(sdkbox::PluginAppodeal::Relationship::AppodealUserRelationshipSingle);
+    sdkbox::PluginAppodeal::setUserSmokingAttitude(sdkbox::PluginAppodeal::SmokingAttitude::AppodealUserSmokingAttitudeNegative);
+    sdkbox::PluginAppodeal::setUserAlcoholAttitude(sdkbox::PluginAppodeal::AlcoholAttitude::AppodealUserAlcoholAttitudeNegative);
+    sdkbox::PluginAppodeal::setUserInterests("game");
+
+    sdkbox::PluginAppodeal::cacheAd(sdkbox::PluginAppodeal::AdType::AppodealAdTypeAll);
+	
+	
     return true;
 }
 
@@ -84,3 +169,19 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
     exit(0);
 #endif
 }
+
+void HelloWorld::onButton1Click(Ref *sender) {
+    CCLOG("Button1 Click");
+    sdkbox::PluginAppodeal::showAd(sdkbox::PluginAppodeal::ShowStyle::AppodealShowStyleInterstitial);
+//    if (sdkbox::PluginAppodeal::isReadyForShowWithStyle(sdkbox::PluginAppodeal::ShowStyle::AppodealShowStyleBannerBottom)) {
+//        sdkbox::PluginAppodeal::showAd(sdkbox::PluginAppodeal::ShowStyle::AppodealShowStyleBannerBottom);
+//    } else {
+//        CCLOG("not ready for show");
+//    }
+}
+
+void HelloWorld::onButton2Click(Ref *sender) {
+    sdkbox::PluginAppodeal::hideBanner();
+    CCLOG("Button2 Click");
+}
+
