@@ -64,6 +64,7 @@
 		4937D19F1BD64160000A1264 /* vg_mute_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937D1871BD64160000A1264 /* vg_mute_off.png */; settings = {ASSET_TAGS = (); }; };
 		4937D1A01BD64160000A1264 /* vg_mute_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937D1881BD64160000A1264 /* vg_mute_on.png */; settings = {ASSET_TAGS = (); }; };
 		4937D1A11BD64160000A1264 /* vg_privacy.png in Resources */ = {isa = PBXBuildFile; fileRef = 4937D1891BD64160000A1264 /* vg_privacy.png */; settings = {ASSET_TAGS = (); }; };
+		4937D1A41BD65056000A1264 /* sdkbox_config.json in Resources */ = {isa = PBXBuildFile; fileRef = 4937D1A31BD65056000A1264 /* sdkbox_config.json */; settings = {ASSET_TAGS = (); }; };
 		4A5740909FBA97AA5E2F2EF6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0704A15A3E9A64E98475C98 /* MobileCoreServices.framework */; };
 		4FA9426BA1F7A8FAB3B1232E /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E98041688C5B0542024ECEBA /* EventKit.framework */; };
 		503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = 503AE0F617EB97AB00D1A890 /* Icon.icns */; };
@@ -113,8 +114,6 @@
 		8262943E1AAF051F00CB7CF7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8262943D1AAF051F00CB7CF7 /* Security.framework */; };
 		93DB4C66A77D114DD822FE2C /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63F64C40B0ECEC648D4CD68A /* MessageUI.framework */; };
 		946249D48F765D54DE610703 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC645DE9DA37AA70C76309D /* Twitter.framework */; };
-		99774DACA71968C43BFCFFDE /* sdkbox_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F7C04611A26536B55D446A1F /* sdkbox_config.json */; };
-		9B8145069876BA164F07B8C3 /* sdkbox_config.json in Resources */ = {isa = PBXBuildFile; fileRef = F7C04611A26536B55D446A1F /* sdkbox_config.json */; };
 		A32F47709F8E51EB5BDB37B8 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7D41C5A83CF417B1D0782D /* WebKit.framework */; };
 		A9EC4069A9A51DDCBF23B64C /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418342B3BB282A15699DE5AF /* CoreImage.framework */; };
 		AA724C828F71A5909C646243 /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF084A7C94D9A7FBE575A5AA /* EventKitUI.framework */; };
@@ -224,6 +223,7 @@
 		4937D1871BD64160000A1264 /* vg_mute_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_mute_off.png; sourceTree = "<group>"; };
 		4937D1881BD64160000A1264 /* vg_mute_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_mute_on.png; sourceTree = "<group>"; };
 		4937D1891BD64160000A1264 /* vg_privacy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vg_privacy.png; sourceTree = "<group>"; };
+		4937D1A31BD65056000A1264 /* sdkbox_config.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = sdkbox_config.json; sourceTree = "<group>"; };
 		503AE0F617EB97AB00D1A890 /* Icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Icon.icns; sourceTree = "<group>"; };
 		503AE0F717EB97AB00D1A890 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		503AE0FA17EB989F00D1A890 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppController.h; path = ios/AppController.h; sourceTree = SOURCE_ROOT; };
@@ -279,7 +279,6 @@
 		EAC645DE9DA37AA70C76309D /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/Twitter.framework; sourceTree = DEVELOPER_DIR; };
 		ED545A7B1B68A1F400C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.4.sdk/usr/lib/libiconv.dylib; sourceTree = DEVELOPER_DIR; };
 		ED545A7D1B68A1FA00C3958E /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		F7C04611A26536B55D446A1F /* sdkbox_config.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = sdkbox_config.json; path = ../Resources/sdkbox_config.json; sourceTree = SOURCE_ROOT; };
 		FF084A7C94D9A7FBE575A5AA /* EventKitUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKitUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/EventKitUI.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
@@ -474,7 +473,7 @@
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
 				46880B7719C43A67006E1F66 /* CloseSelected.png */,
 				46880B7A19C43A67006E1F66 /* HelloWorld.png */,
-				F7C04611A26536B55D446A1F /* sdkbox_config.json */,
+				4937D1A31BD65056000A1264 /* sdkbox_config.json */,
 			);
 			name = Resources;
 			path = ../Resources;
@@ -692,6 +691,7 @@
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				4937D1A41BD65056000A1264 /* sdkbox_config.json in Resources */,
 				4937D1941BD64160000A1264 /* MPDAAIcon.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
@@ -711,7 +711,6 @@
 				4937D18E1BD64160000A1264 /* appodeal_pattern.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				50EF629717ECD46A001EB2F8 /* Icon-58.png in Resources */,
-				9B8145069876BA164F07B8C3 /* sdkbox_config.json in Resources */,
 				4937D1991BD64160000A1264 /* StartApp.bundle in Resources */,
 				4937D1971BD64160000A1264 /* MRAID.bundle in Resources */,
 			);
@@ -727,7 +726,6 @@
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
-				99774DACA71968C43BFCFFDE /* sdkbox_config.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
