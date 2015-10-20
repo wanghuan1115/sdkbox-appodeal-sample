@@ -6,7 +6,13 @@
 * extract and copy appodeal.framework to appodealCpp/proj.ios_mac
 * run
 
+
 ＃ android
 
 * cocos compile
 # cocos run
+
+
+# Known Issue
+1. iOS simulator compile error (cocos2d-x problem)
+2. iOS failed to display ads
