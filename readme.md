@@ -6,4 +6,7 @@
 * extract and copy appodeal.framework to appodealCpp/proj.ios_mac
 * run
 
+＃ android
 
+* cocos compile
+# cocos run
