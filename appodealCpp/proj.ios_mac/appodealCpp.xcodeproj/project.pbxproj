@@ -104,6 +104,7 @@
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
 		56FC4AEF8C401313B511E92F /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 418342B3BB282A15699DE5AF /* CoreImage.framework */; };
 		599749E3B146710C4E947219 /* PluginAppodeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 531F4080A333449FCF7A64CA /* PluginAppodeal.framework */; };
+		59A5F43E1BD6DF5D00FCFF91 /* PluginAppodeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A5F43D1BD6DF5D00FCFF91 /* PluginAppodeal.framework */; settings = {ASSET_TAGS = (); }; };
 		5E3741A487A081EC05E93CDC /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAC645DE9DA37AA70C76309D /* Twitter.framework */; };
 		5F0B4BD992710E0FECD376A3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE04C34BBDD089B438046EE /* SystemConfiguration.framework */; };
 		729F4411BEC015C4270BAE78 /* GameController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A8640A6AD51AEB98B848FA3 /* GameController.framework */; };
@@ -261,6 +262,7 @@
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		531F4080A333449FCF7A64CA /* PluginAppodeal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PluginAppodeal.framework; sourceTree = SOURCE_ROOT; };
+		59A5F43D1BD6DF5D00FCFF91 /* PluginAppodeal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PluginAppodeal.framework; sourceTree = "<group>"; };
 		63F64C40B0ECEC648D4CD68A /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/MessageUI.framework; sourceTree = DEVELOPER_DIR; };
 		7771428FA92B9D3F94387B1A /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/CoreFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		7AE04C34BBDD089B438046EE /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
@@ -318,6 +320,7 @@
 				77E74942ABC48FD29294CC00 /* MediaPlayer.framework in Frameworks */,
 				B3224083A53AAC510C970CE8 /* MessageUI.framework in Frameworks */,
 				4A5740909FBA97AA5E2F2EF6 /* MobileCoreServices.framework in Frameworks */,
+				59A5F43E1BD6DF5D00FCFF91 /* PluginAppodeal.framework in Frameworks */,
 				BF274DE2BD9B76A0A022ED25 /* Social.framework in Frameworks */,
 				B8B840DF9944E85C4D3DBE93 /* StoreKit.framework in Frameworks */,
 				5F0B4BD992710E0FECD376A3 /* SystemConfiguration.framework in Frameworks */,
@@ -418,6 +421,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59A5F43D1BD6DF5D00FCFF91 /* PluginAppodeal.framework */,
 				4937D16F1BD63EB0000A1264 /* libz.tbd */,
 				4937D16D1BD63EA1000A1264 /* libxml2.2.tbd */,
 				4937D16B1BD63E96000A1264 /* libsqlite3.tbd */,
@@ -776,7 +780,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"/Users/htl/Documents/Work/sdkbox-appodeal-sample/appodealCpp/proj.ios_mac/\"";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -794,7 +799,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"sdkbox.framework\"",
 					"\"PluginAppodeal.framework\"",
@@ -818,7 +823,8 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
-				FRAMEWORK_SEARCH_PATHS = "\"/Users/htl/Documents/Work/sdkbox-appodeal-sample/appodealCpp/proj.ios_mac/\"";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
 				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ios/Prefix.pch;
@@ -834,7 +840,7 @@
 					"$(SRCROOT)/../cocos2d/cocos/platform/ios/Simulation",
 				);
 				INFOPLIST_FILE = ios/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"\"sdkbox.framework\"",
 					"\"PluginAppodeal.framework\"",
