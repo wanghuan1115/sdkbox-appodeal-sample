@@ -14,4 +14,4 @@
 
 # Known Issue
 1. iOS simulator compile error (cocos2d-x problem)
-2. iOS failed to display ads
+2. iOS callback havn't trigger
