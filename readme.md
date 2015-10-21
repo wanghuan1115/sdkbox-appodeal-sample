@@ -9,8 +9,7 @@
 
 # android
 
-* cocos compile
-# cocos run
+* cocos run
 
 
 # Known Issue
