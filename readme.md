@@ -8,10 +8,7 @@
 
 
 # android
-
 * cocos run
 
 
 # Known Issue
-1. iOS simulator compile error (cocos2d-x problem)
-2. iOS callback havn't trigger
