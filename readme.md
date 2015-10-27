@@ -12,3 +12,6 @@
 
 
 # Known Issue
+
+1. MUST select iphone4s target, if compile ios simulator
+
