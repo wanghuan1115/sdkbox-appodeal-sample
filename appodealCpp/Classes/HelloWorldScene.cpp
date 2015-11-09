@@ -21,6 +21,7 @@ public:
     virtual void onVideoDidPresent();
     virtual void onVideoWillDismiss();
     virtual void onVideoDidFinish();
+    virtual void onRewardVideoDidFinish(int amount, const std::string& name);
 };
 
 void ADListener::onBannerDidLoadAd() {
@@ -66,6 +67,9 @@ void ADListener::onVideoWillDismiss() {
 }
 void ADListener::onVideoDidFinish() {
     CCLOG("Listener onVideoDidFinish");
+}
+void ADListener::onRewardVideoDidFinish(int amount, const std::string& name) {
+    CCLOG("Listener onRewardVideoDidFinish %d : %s", amount, name.c_str());
 }
 
 

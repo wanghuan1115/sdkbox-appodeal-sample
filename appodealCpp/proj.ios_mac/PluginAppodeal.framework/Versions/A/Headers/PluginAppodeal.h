@@ -14,22 +14,68 @@
 namespace sdkbox {
     class AppodealListener {
     public:
+        /**
+         * trigger when banner ad load
+         */
         virtual void onBannerDidLoadAd() = 0;
+        /**
+         * trigger when banner ad fail to load
+         */
         virtual void onBannerDidFailToLoadAd() = 0;
+        /**
+         * trigger when banner ad clicked
+         */
         virtual void onBannerDidClick() = 0;
+        /**
+         * trigger when banner ad present
+         */
         virtual void onBannerPresent() = 0; // just trigger on android
 
+        /**
+         * trigger when interstitial ad load
+         */
         virtual void onInterstitialDidLoadAd() = 0;
+        /**
+         * trigger when interstitial ad fail to load
+         */
         virtual void onInterstitialDidFailToLoadAd() = 0;
+        /**
+         * trigger when interstitial ad present
+         */
         virtual void onInterstitialWillPresent() = 0;
+        /**
+         * trigger when interstitial dismiss
+         */
         virtual void onInterstitialDidDismiss() = 0;
+        /**
+         * trigger when interstitial ad clicked
+         */
         virtual void onInterstitialDidClick() = 0;
 
+        /**
+         * trigger when video load
+         */
         virtual void onVideoDidLoadAd() = 0;
+        /**
+         * trigger when video fail to load
+         */
         virtual void onVideoDidFailToLoadAd() = 0;
+        /**
+         * trigger when video present
+         */
         virtual void onVideoDidPresent() = 0;
+        /**
+         * trigger when video dismiss
+         */
         virtual void onVideoWillDismiss() = 0;
+        /**
+         * trigger when video finish
+         */
         virtual void onVideoDidFinish() = 0;
+        /**
+         * trigger when reward video finish
+         */
+        virtual void onRewardVideoDidFinish(int amount, const std::string& name) = 0;
     };
 
     class PluginAppodeal {
@@ -40,7 +86,8 @@ namespace sdkbox {
             AppodealAdTypeVideo        = 1 << 1,
             AppodealAdTypeBanner       = 1 << 2,
             AppodealAdTypeNativeAd     = 1 << 3,
-            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeVideo | AppodealAdTypeBanner | AppodealAdTypeNativeAd
+            AppodealAdTypeRewardVideo  = 1 << 4,
+            AppodealAdTypeAll          = AppodealAdTypeInterstitial | AppodealAdTypeVideo | AppodealAdTypeBanner | AppodealAdTypeNativeAd | AppodealAdTypeRewardVideo
         } AdType;
 
         typedef enum {
@@ -49,7 +96,8 @@ namespace sdkbox {
             AppodealShowStyleVideoOrInterstitial,
             AppodealShowStyleBannerTop,
             AppodealShowStyleBannerCenter,
-            AppodealShowStyleBannerBottom
+            AppodealShowStyleBannerBottom,
+            AppodealShowStyleRewardedVideo
         } ShowStyle;
 
         typedef enum {
@@ -106,14 +154,12 @@ namespace sdkbox {
          */
         static void removeListener();
 
-
         static void setDebugEnabled(bool debugEnabled);
         static bool showAd(ShowStyle style);
         static void cacheAd(AdType type);
         static void hideBanner();
         static bool isReadyForShowWithStyle(ShowStyle showStyle);
 
-        //user meta data
         static void setUserVkId(const std::string& vkId);
         static void setUserFacebookId(const std::string& facebookId);
         static void setUserEmail(const std::string& email);
