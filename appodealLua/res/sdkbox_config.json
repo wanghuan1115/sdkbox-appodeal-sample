@@ -1,0 +1,12 @@
+{
+    "android": {
+        "Appodeal": {
+            "app_key": "1f7f88309c75d31afcd82a29a4b5fcaa745f287719523589"
+        }
+    },
+    "ios": {
+        "Appodeal": {
+            "app_key": "fd1534cca2ff51621b7245712de4532fd67731d74d3fd262"
+        }
+    }
+}
